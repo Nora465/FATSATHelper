@@ -1,0 +1,164 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "6a826f3cb078d83ada7184a53e01143e",
+    "entities": [
+      {
+        "tableName": "Users",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `firstName` TEXT, `lastName` TEXT, `trigramme` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstName",
+            "columnName": "firstName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastName",
+            "columnName": "lastName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "trigramme",
+            "columnName": "trigramme",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_Users_trigramme",
+            "unique": true,
+            "columnNames": [
+              "trigramme"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Users_trigramme` ON `${TABLE_NAME}` (`trigramme`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "check_list",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `siteName` TEXT NOT NULL, `dateOfCreation` INTEGER, `siteType` TEXT NOT NULL, `coordsGPS` TEXT, `localFolder` TEXT, `FATok` INTEGER NOT NULL, `SATok` INTEGER NOT NULL, `picsAPI` TEXT, `picsSNArm` TEXT, `picsArm` TEXT, `picsSIMSMS` TEXT, `cablETIC1` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "siteName",
+            "columnName": "siteName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateOfCreation",
+            "columnName": "dateOfCreation",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "siteType",
+            "columnName": "siteType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "coordsGPS",
+            "columnName": "coordsGPS",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "localFolder",
+            "columnName": "localFolder",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "FATok",
+            "columnName": "FATok",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "SATok",
+            "columnName": "SATok",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "picsAPI",
+            "columnName": "picsAPI",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "picsSNArm",
+            "columnName": "picsSNArm",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "picsArm",
+            "columnName": "picsArm",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "picsSIMSMS",
+            "columnName": "picsSIMSMS",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cablETIC1",
+            "columnName": "cablETIC1",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_check_list_siteName",
+            "unique": true,
+            "columnNames": [
+              "siteName"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_check_list_siteName` ON `${TABLE_NAME}` (`siteName`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6a826f3cb078d83ada7184a53e01143e')"
+    ]
+  }
+}

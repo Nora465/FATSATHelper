@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="8dp"
+    android:id="@+id/SglLineContainer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:contentDescription="Solar Panel Icon"
+            android:id="@+id/SglLineTypeImg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/ic_solar_panel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textAlignment="textStart"
+            android:textSize="26sp" />
+        <TextView
+            android:id="@+id/SglLineSiteName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/siteName"
+            android:textAlignment="textStart"
+            android:textSize="26sp" />
+
+        <ImageButton
+            android:contentDescription="Settings Gear Icon"
+            android:id="@+id/SglLineEditBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_edit"
+            android:background="@android:color/transparent"
+            app:tint="#b5a8ab"/>
+
+        <ImageButton
+            android:contentDescription="Trash Can Icon"
+            android:id="@+id/SglLineDeleteBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_delete_forever_48px"
+            android:background="@android:color/transparent"
+            app:tint="#ff5e7e"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+<!--
+    Voir explication : https://openclassrooms.com/fr/courses/4568576-recuperez-et-affichez-des-donnees-distantes/4893781-implementez-votre-premiere-recyclerview#/id/r-4909215
+-->

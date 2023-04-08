@@ -1,0 +1,11 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.3.0' apply false
+    id 'com.android.library' version '7.3.0' apply false
+}
+
+allprojects {
+    tasks.withType(JavaCompile) { //Permet de build avec des lints en plus
+        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    }
+}

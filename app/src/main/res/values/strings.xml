@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FATSATHelper</string>
+    <!-- Main Activity -->
+    <string name="AddButtonDesc">Add Button</string>
+    <!-- Main Single Line -->
+    <string name="siteName">Test Site</string>
+    <!-- Create Entry Activity -->
+
+    <!-- Create Site Activity -->
+    <string-array name="TypeSiteArray">
+        <item> PV </item>
+        <item> EOL </item>
+    </string-array>
+
+</resources>
