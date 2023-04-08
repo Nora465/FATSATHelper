@@ -1,6 +1,5 @@
 package com.nora465.fatsathelper.CreateEditSiteActivity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -55,12 +54,6 @@ public class CreateEditSiteActivity extends AppCompatActivity {
 			}
 		}
 		InitViews(); //Init Views on Activity
-	}
-	
-	@Override //From activity.ComponentActivity
-	public void onBackPressed() {
-		setResult(Activity.RESULT_CANCELED);
-		super.onBackPressed();
 	}
 	
 	//event Click : Button "Create or Edit"
